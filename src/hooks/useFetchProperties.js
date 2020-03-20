@@ -20,15 +20,14 @@ const reducer = (state, { type, data }) => {
   }
 };
 
-const useFetchProperties = ({ url = '' } = {}) => {
+const useFetchProperties = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetch = async () => {
     dispatch({ type: LOADING });
 
     try {
-      const { status, data } = await axios.get(url);
-
+      const { status, data } = await axios.get(`${process.env.REACT_APP_PROPERTIES_ENDPOINT}`);
       status >= 200 && status < 300 && dispatch({ type: SUCCESS, data });
     } catch (e) {
       dispatch({ type: FAIL });

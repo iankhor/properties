@@ -1,24 +1,24 @@
 /* istanbul ignore file */
 
-export const properties = [
+export const propertiesFixtures = [
   {
     id: 1,
     status: 'current',
-    street: '1 Fake Street',
-    suburb: 'Glen Iris',
-    state: 'VIC',
-    postcode: '3146',
-    price: 1230500,
-    image: 'https://code-challenge.activepipe.com/property-images/frontage/01.jpg'
+    street: '1 Doom',
+    suburb: 'Eternal',
+    state: 'Doomguy',
+    postcode: '6666',
+    price: 1500,
+    image: 'http://random.com/1.jpg'
   },
   {
     id: 2,
-    status: 'current',
-    street: '2 Fake Street',
-    suburb: 'Glen Iris',
-    state: 'VIC',
-    postcode: '3146',
-    price: 1330500,
-    image: 'https://code-challenge.activepipe.com/property-images/frontage/02.jpg'
+    status: 'sold',
+    street: '1 Commander',
+    suburb: 'Keen',
+    state: 'Phobos',
+    postcode: '9999',
+    price: 100,
+    image: 'http://random.com/2.jpg'
   }
 ];

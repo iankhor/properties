@@ -1,5 +1,4 @@
 import { testHook, mockAxiosGet } from 'testlib/test-utils';
-import { airportDetails } from 'testlib/fixtures';
 import { act } from 'react-dom/test-utils';
 
 import useFetchProperties from 'hooks/useFetchProperties';
@@ -12,6 +11,8 @@ jest.mock('axios', () => ({
 
 describe('useFetchProperties', () => {
   let hooksOpts;
+  const mockUrl = '/theUrl';
+  process.env.REACT_APP_PROPERTIES_ENDPOINT = mockUrl;
 
   beforeEach(() => jest.clearAllMocks());
 
@@ -61,10 +62,9 @@ describe('useFetchProperties', () => {
     describe('fetch has completed', () => {
       describe('successful', () => {
         beforeEach(async () => {
-          const url = 'api.qantas.com/airports';
           mockAxiosGet({
             mockAxios: axios,
-            mockUrl: url,
+            mockUrl,
             successResponse: {
               status: 200,
               data: [{ foo: 'bar' }]
@@ -72,7 +72,7 @@ describe('useFetchProperties', () => {
           });
 
           testHook(() => {
-            hooksOpts = useFetchProperties({ url });
+            hooksOpts = useFetchProperties();
           });
 
           const [_, fetch] = hooksOpts;
@@ -110,7 +110,7 @@ describe('useFetchProperties', () => {
           const url = 'api.qantas.com/airports';
           mockAxiosGet({
             mockAxios: axios,
-            mockUrl: url,
+            mockUrl,
             failResponse: { status: 422 }
           });
 

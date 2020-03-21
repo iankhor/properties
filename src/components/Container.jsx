@@ -1,18 +1,7 @@
 import React, { Fragment, useEffect } from 'react';
 import useFetchProperties from 'hooks/useFetchProperties';
 import useDataFilter from 'hooks/useDataFilter';
-import numeral from 'numeraljs';
-
-const Listing = ({ id, status, street, suburb, state, postcode, price, image }) => (
-  <div data-testid={`property-${id}`}>
-    <div>{status}</div>
-    <div>{street}</div>
-    <div>{suburb}</div>
-    <div>{`${state} ${postcode}`}</div>
-    <div>{numeral(price).format('$0,0[.]00')}</div>
-    <img alt={`${street} ${suburb} ${state} ${postcode}`} src={image}></img>
-  </div>
-);
+import Listing from 'components/Listing';
 
 const Container = () => {
   const [{ isLoading, isSuccess, isError, data }, fetch] = useFetchProperties();

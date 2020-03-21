@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 
 import Listings from 'components/Listings';
 import Filter from 'components/Filter';
@@ -19,12 +19,12 @@ const Container = () => {
   useEffect(() => void showInitialListings(), [data, isSuccess]);
 
   return (
-    <Layout>
+    <Fragment>
       <Filter filterBy={filterBy} data={data} />
       {isLoading && <Loader />}
-      {isSuccess && <Listings listings={filteredListings} />}
       {isError && <Error fetch={fetch} />}
-    </Layout>
+      <Layout>{isSuccess && <Listings listings={filteredListings} />}</Layout>
+    </Fragment>
   );
 };
 

@@ -1,0 +1,14 @@
+.listing {
+  background-color: white;
+  border: 0.1rem solid black;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+img {
+  object-fit: scale-down;
+  height: 9rem;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import filterStyles from 'styles/filter.css';
 
 const Filter = ({ filterBy, data }) => {
   const filter = ({ target: { value } }) => {
@@ -8,11 +9,13 @@ const Filter = ({ filterBy, data }) => {
     filterBy({ data, criteria });
   };
   return (
-    <select data-testid="filter" onChange={filter}>
-      <option value="">All</option>
-      <option value="sold">Sold</option>
-      <option value="current">Current</option>
-    </select>
+    <div className={filterStyles.filter}>
+      <select data-testid="filter" onChange={filter}>
+        <option value="">All</option>
+        <option value="sold">Sold</option>
+        <option value="current">Current</option>
+      </select>
+    </div>
   );
 };
 

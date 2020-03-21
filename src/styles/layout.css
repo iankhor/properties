@@ -1,0 +1,15 @@
+.container {
+  font-size: 10px;
+  display: grid;
+  background-color: rgba(68, 81, 95);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 18rem);
+  grid-gap: 1.5rem;
+  padding: 2rem;
+  justify-items: stretch;
+}
+
+/* rgba(50, 62, 75);
+rgba(50, 180, 146);
+rgba(189, 37, 105);
+rgba(250, 126, 34); */

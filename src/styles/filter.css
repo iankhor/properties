@@ -1,14 +1,33 @@
 .filter {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   background-color: rgba(50, 62, 75);
-  grid-gap: 20rem;
-  align-items: center;
   width: 100vw;
   box-sizing: border-box;
   padding: 2rem;
 }
 
+.title {
+  display: inline-block;
+  color: white;
+  padding-left: 2rem;
+  font-size: 1.8rem;
+  vertical-align: middle;
+}
+
+.label {
+  margin: auto;
+  padding-left: 60%;
+  padding-right: 1rem;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 select {
-  grid-column: 4 / 3;
+  background-color: rgba(68, 81, 95);
+  color: white;
+  width: 11rem;
+  height: 3rem;
+  border: 1px solid white;
+  display: inline-block;
+  vertical-align: middle;
 }

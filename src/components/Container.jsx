@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import useFetchProperties from 'hooks/useFetchProperties';
+import useDataFilter from 'hooks/useDataFilter';
 import numeral from 'numeraljs';
 
 const Listing = ({ id, status, street, suburb, state, postcode, price, image }) => (
@@ -15,13 +16,29 @@ const Listing = ({ id, status, street, suburb, state, postcode, price, image }) 
 
 const Container = () => {
   const [{ isLoading, isSuccess, isError, data }, fetch] = useFetchProperties();
+  const [filteredData, filterBy] = useDataFilter();
 
   useEffect(() => void fetch(), []);
+  useEffect(() => {
+    isSuccess && filterBy({ data });
+  }, [data, isSuccess]);
+
+  const filter = ({ target: { value } }) => {
+    // TODO: ugly. to refactor
+    const criteria = !!value ? { status: value } : null;
+
+    filterBy({ data, criteria });
+  };
 
   return (
     <Fragment>
+      <select data-testid="filter" onChange={filter}>
+        <option value="">All</option>
+        <option value="sold">Sold</option>
+        <option value="current">Current</option>
+      </select>
       {isLoading && <p>Loading...</p>}
-      {isSuccess && data.map(property => <Listing {...property} key={property.id} />)}
+      {isSuccess && filteredData.map(property => <Listing {...property} key={property.id} />)}
     </Fragment>
   );
 };

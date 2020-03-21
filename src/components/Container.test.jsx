@@ -2,7 +2,7 @@ import React from 'react';
 import { propertiesFixtures } from 'testlib/fixtures';
 import { mockAxiosGet } from 'testlib/test-utils';
 import { act } from 'react-dom/test-utils';
-import { render, wait, within } from '@testing-library/react';
+import { render, wait, within, fireEvent } from '@testing-library/react';
 
 import Container from 'components/Container';
 import axios from 'axios';
@@ -37,7 +37,7 @@ describe('Container', () => {
     });
 
     it('sees a list of properties', async () => {
-      const { getByTestId, getAllByTestId, queryByText } = render(<Container />);
+      const { getByTestId } = render(<Container />);
       await act(() => wait());
 
       const listingOne = within(getByTestId('property-1'));
@@ -57,8 +57,27 @@ describe('Container', () => {
       expect(listingTwo.queryByText('$100')).toBeInTheDocument();
     });
 
-    describe('filtering', () => {
-      it('sees a list of properties based on filter criteria', async () => {});
+    describe('filtering by status', () => {
+      test.each`
+        filterCriteria | displayedListing | notDisplayedListing
+        ${'sold'}      | ${'property-2'}  | ${'property-1'}
+        ${'current'}   | ${'property-1'}  | ${'property-2'}
+      `(
+        'when filter of $filterCriteria is selected, only $displayedListing is visible',
+        async ({ filterCriteria, displayedListing, notDisplayedListing }) => {
+          const { getByTestId, queryByTestId } = render(<Container />);
+          await act(() => wait());
+
+          const select = getByTestId('filter');
+          fireEvent.change(select, { target: { value: filterCriteria } });
+
+          const shownListing = queryByTestId(displayedListing);
+          const hiddenListing = queryByTestId(notDisplayedListing);
+
+          expect(hiddenListing).not.toBeInTheDocument();
+          expect(shownListing).toBeInTheDocument();
+        }
+      );
     });
   });
 
@@ -76,5 +95,7 @@ describe('Container', () => {
     it('shows an error message', async () => {});
 
     it('does not show the list', async () => {});
+
+    it('is able to refetch property listings', async () => {});
   });
 });

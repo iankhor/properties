@@ -10,3 +10,15 @@
   box-sizing: border-box;
   padding: 3rem;
 }
+
+@media (max-width: 70rem) {
+  .layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 50rem) {
+  .layout {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

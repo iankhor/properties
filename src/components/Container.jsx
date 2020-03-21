@@ -9,6 +9,8 @@ import Layout from 'components/Layout';
 import useFetchProperties from 'hooks/useFetchProperties';
 import useDataFilter from 'hooks/useDataFilter';
 
+import containerStyles from 'styles/container.css';
+
 const Container = () => {
   const [{ isLoading, isSuccess, isError, data }, fetch] = useFetchProperties();
   const [filteredListings, filterBy] = useDataFilter();
@@ -19,12 +21,12 @@ const Container = () => {
   useEffect(() => void showInitialListings(), [data, isSuccess]);
 
   return (
-    <Fragment>
+    <div className={containerStyles}>
       <Filter filterBy={filterBy} data={data} />
       {isLoading && <Loader />}
       {isError && <Error fetch={fetch} />}
       <Layout>{isSuccess && <Listings listings={filteredListings} />}</Layout>
-    </Fragment>
+    </div>
   );
 };
 

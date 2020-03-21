@@ -1,5 +1,4 @@
 .container {
-  font-size: 10px;
   display: grid;
   background-color: rgba(68, 81, 95);
   grid-template-columns: repeat(5, 1fr);

@@ -8,13 +8,13 @@ html {
 body {
   margin: 0;
   padding: 0;
+  background-color: rgba(50, 62, 75);
 }
 
 .container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-items: center;
-  align-items: center;
   height: 100vh;
 }
 

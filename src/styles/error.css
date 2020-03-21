@@ -1,0 +1,13 @@
+.error {
+  background-color: rgba(184, 73, 73);
+  margin-top: 5rem;
+  padding: 3rem;
+  color: white;
+  display: inline-block;
+}
+
+.refetch {
+  display: inline-block;
+  padding-left: 2rem;
+  cursor: pointer;
+}

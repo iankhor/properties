@@ -1,6 +1,7 @@
 .loader {
   width: 10rem;
   height: 10rem;
+  margin: auto;
 }
 .loader:after {
   content: ' ';

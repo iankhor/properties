@@ -22,10 +22,14 @@ const Container = () => {
 
   return (
     <div className={containerStyles.container}>
-      <Filter filterBy={filterBy} data={data} />
       {isLoading && <Loader />}
       {isError && <Error fetch={fetch} />}
-      <Layout>{isSuccess && <Listings listings={filteredListings} />}</Layout>
+      {!isLoading && <Filter filterBy={filterBy} data={data} />}
+      {isSuccess && (
+        <Layout>
+          <Listings listings={filteredListings} />
+        </Layout>
+      )}
     </div>
   );
 };

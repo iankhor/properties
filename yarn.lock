@@ -703,6 +703,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@fvilers/disable-react-devtools@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@fvilers/disable-react-devtools/-/disable-react-devtools-1.1.0.tgz#065d0c3876fde8354b18d4b3191eaa54bab6bd6c"
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz#10602de5570baea82f8afbfa2630b24e7a8cfe5b"

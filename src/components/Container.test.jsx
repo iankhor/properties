@@ -95,7 +95,7 @@ describe('Container', () => {
 
       const listingOne = queryByTestId('property-1');
       const listingTwo = queryByTestId('property-2');
-      const errorMessage = getByText("Uh oh. It looks like some things haven't loaded correctly");
+      const errorMessage = getByText("😩 Uh oh. It looks like some things haven't loaded correctly");
 
       expect(listingOne).not.toBeInTheDocument();
       expect(listingTwo).not.toBeInTheDocument();
@@ -115,7 +115,7 @@ describe('Container', () => {
       const { getByText, getByTestId } = container;
       await act(() => wait());
 
-      const errorMessage = getByText("Uh oh. It looks like some things haven't loaded correctly");
+      const errorMessage = getByText("😩 Uh oh. It looks like some things haven't loaded correctly");
       const refetchElement = getByTestId('refetch');
 
       expect(errorMessage).toBeInTheDocument();

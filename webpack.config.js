@@ -17,6 +17,19 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, 'src'),
         use: ['babel-loader']
+      },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -25,12 +38,13 @@ module.exports = {
     port: 9000
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx'],
+    extensions: ['*', '.js', '.jsx', '.css'],
     alias: {
       components: `${src}/components`,
       hooks: `${src}/hooks`,
       lib: `${src}/lib`,
-      testlib: `${src}/testlib`
+      testlib: `${src}/testlib`,
+      styles: `${src}/styles`
     }
   },
   plugins: [

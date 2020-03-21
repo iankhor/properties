@@ -1,9 +1,10 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import Listings from 'components/Listings';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
 import Error from 'components/Error';
+import Layout from 'components/Layout';
 
 import useFetchProperties from 'hooks/useFetchProperties';
 import useDataFilter from 'hooks/useDataFilter';
@@ -18,12 +19,12 @@ const Container = () => {
   useEffect(() => void showInitialListings(), [data, isSuccess]);
 
   return (
-    <Fragment>
+    <Layout>
       <Filter filterBy={filterBy} data={data} />
       {isLoading && <Loader />}
       {isSuccess && <Listings listings={filteredListings} />}
       {isError && <Error fetch={fetch} />}
-    </Fragment>
+    </Layout>
   );
 };
 

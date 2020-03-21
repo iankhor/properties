@@ -2,10 +2,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   background-color: rgba(50, 62, 75);
-  height: 10vh;
   grid-gap: 20rem;
-  padding: 1rem;
   align-items: center;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 2rem;
 }
 
 select {

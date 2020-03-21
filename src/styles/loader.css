@@ -1,0 +1,23 @@
+.loader {
+  width: 10rem;
+  height: 10rem;
+}
+.loader:after {
+  content: ' ';
+  display: block;
+  width: 6.4rem;
+  height: 6.4rem;
+  margin: 0.8rem;
+  border-radius: 50%;
+  border: 0.6rem solid rgba(237, 122, 123);
+  border-color: rgba(237, 122, 123) transparent rgba(237, 122, 123) transparent;
+  animation: loader 1.2s linear infinite;
+}
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

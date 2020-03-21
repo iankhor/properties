@@ -1,14 +1,12 @@
-.container {
+.layout {
   display: grid;
   background-color: rgba(68, 81, 95);
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 18rem);
-  grid-gap: 1.5rem;
-  padding: 2rem;
+  grid-gap: 2rem;
   justify-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3rem;
 }
-
-/* rgba(50, 62, 75);
-rgba(50, 180, 146);
-rgba(189, 37, 105);
-rgba(250, 126, 34); */

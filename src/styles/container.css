@@ -9,3 +9,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* rgba(50, 62, 75);
+rgba(50, 180, 146);
+rgba(237, 122, 123);
+rgba(189, 37, 105);
+rgba(250, 126, 34); */

@@ -21,7 +21,7 @@ const Container = () => {
   useEffect(() => void showInitialListings(), [data, isSuccess]);
 
   return (
-    <div className={containerStyles}>
+    <div className={containerStyles.container}>
       <Filter filterBy={filterBy} data={data} />
       {isLoading && <Loader />}
       {isError && <Error fetch={fetch} />}

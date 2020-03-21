@@ -1,6 +1,6 @@
 .listing {
   background-color: white;
-  border: 0.1rem solid black;
+  border: 0.1rem solid white;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;

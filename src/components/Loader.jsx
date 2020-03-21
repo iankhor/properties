@@ -4,6 +4,6 @@ import loaderStyles from 'styles/loader.css';
 
 console.log(loaderStyles.loader);
 
-const Loader = () => <div className={loaderStyles.loader}></div>;
+const Loader = () => <div data-testid="loader" className={loaderStyles.loader}></div>;
 
 export default Loader;

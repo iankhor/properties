@@ -18,9 +18,9 @@ describe('Container', () => {
 
   describe('initial page view', () => {
     it('shows loading while fetching properties', () => {
-      const { getByText } = render(<Container />);
+      const { getByTestId } = render(<Container />);
 
-      expect(getByText('Loading...')).toBeInTheDocument();
+      expect(getByTestId('loader')).toBeInTheDocument();
     });
   });
 

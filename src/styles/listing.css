@@ -2,7 +2,7 @@
   background-color: white;
   border: 0.1rem solid black;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: center;
   padding: 0.5rem;
@@ -11,4 +11,39 @@
 img {
   object-fit: scale-down;
   height: 9rem;
+}
+
+.status {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 0.6rem;
+}
+
+.dot {
+  height: 1rem;
+  width: 1rem;
+
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.green {
+  background-color: rgba(50, 180, 146);
+}
+
+.red {
+  background-color: rgba(189, 37, 105);
+}
+
+.orange {
+  background-color: rgba(250, 126, 34);
+}
+
+.grey {
+  background-color: rgba(68, 81, 95);
+}
+
+.row {
+  grid-column: 1 / 3;
 }

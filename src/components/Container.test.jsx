@@ -41,7 +41,7 @@ describe('Container', () => {
       await act(() => wait());
 
       const listingOne = within(getByTestId('property-1'));
-      expect(listingOne.queryByText('current')).toBeInTheDocument();
+      expect(listingOne.queryByText('Current')).toBeInTheDocument();
       expect(listingOne.getByAltText(/1 doom eternal doomguy 6666/i)).toHaveAttribute('src', 'http://random.com/1.jpg');
       expect(listingOne.queryByText('1 Doom')).toBeInTheDocument();
       expect(listingOne.queryByText('Eternal')).toBeInTheDocument();
@@ -49,7 +49,7 @@ describe('Container', () => {
       expect(listingOne.queryByText('$1,500')).toBeInTheDocument();
 
       const listingTwo = within(getByTestId('property-2'));
-      expect(listingTwo.queryByText('sold')).toBeInTheDocument();
+      expect(listingTwo.queryByText('Sold')).toBeInTheDocument();
       expect(listingTwo.getByAltText(/1 commander keen phobos 9999/i)).toHaveAttribute('src', 'http://random.com/2.jpg');
       expect(listingTwo.queryByText('1 Commander')).toBeInTheDocument();
       expect(listingTwo.queryByText('Keen')).toBeInTheDocument();

@@ -105,9 +105,8 @@ describe('useFetchProperties', () => {
         });
       });
 
-      describe('failed', () => {
-        beforeEach(async () => {
-          const url = 'api.qantas.com/airports';
+      describe('refetching from a failed state', () => {
+        it('has isError as false', async () => {
           mockAxiosGet({
             mockAxios: axios,
             mockUrl,
@@ -115,7 +114,44 @@ describe('useFetchProperties', () => {
           });
 
           testHook(() => {
-            hooksOpts = useFetchProperties({ url });
+            hooksOpts = useFetchProperties();
+          });
+
+          const [_, fetch] = hooksOpts;
+          await act(() => fetch());
+
+          const [failedState] = hooksOpts;
+          expect(failedState.isComplete).toEqual(true);
+          expect(failedState.isError).toEqual(true);
+
+          mockAxiosGet({
+            mockAxios: axios,
+            mockUrl,
+            successResponse: {
+              status: 200,
+              data: [{ foo: 'bar' }]
+            }
+          });
+
+          await act(() => fetch());
+          const [succeededState] = hooksOpts;
+
+          expect(succeededState.isComplete).toEqual(true);
+          expect(succeededState.isError).toEqual(false);
+          expect(succeededState.isSuccess).toEqual(true);
+        });
+      });
+
+      describe('failed', () => {
+        beforeEach(async () => {
+          mockAxiosGet({
+            mockAxios: axios,
+            mockUrl,
+            failResponse: { status: 422 }
+          });
+
+          testHook(() => {
+            hooksOpts = useFetchProperties();
           });
 
           const [_, fetch] = hooksOpts;

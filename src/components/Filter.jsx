@@ -14,6 +14,8 @@ const Filter = ({ filterBy, data }) => {
         <option value="">All</option>
         <option value="sold">Sold</option>
         <option value="current">Current</option>
+        <option value="off_market">Off Market</option>
+        <option value="withdrawn">Withdrawn</option>
       </select>
     </div>
   );

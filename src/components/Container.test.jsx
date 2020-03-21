@@ -2,7 +2,7 @@ import React from 'react';
 import { propertiesFixtures } from 'testlib/fixtures';
 import { mockAxiosGet } from 'testlib/test-utils';
 import { act } from 'react-dom/test-utils';
-import { render, wait, within, fireEvent } from '@testing-library/react';
+import { render, wait, within, fireEvent, prettyDOM } from '@testing-library/react';
 
 import Container from 'components/Container';
 import axios from 'axios';
@@ -82,7 +82,7 @@ describe('Container', () => {
   });
 
   describe('seeing a error message when fetch has failed', () => {
-    beforeEach(() => {
+    it('shows an error message', async () => {
       mockAxiosGet({
         mockAxios: axios,
         mockUrl,
@@ -90,12 +90,54 @@ describe('Container', () => {
           status: 500
         }
       });
+      const { queryByTestId, getByText } = render(<Container />);
+      await act(() => wait());
+
+      const listingOne = queryByTestId('property-1');
+      const listingTwo = queryByTestId('property-2');
+      const errorMessage = getByText("Uh oh. It looks like some things haven't loaded correctly");
+
+      expect(listingOne).not.toBeInTheDocument();
+      expect(listingTwo).not.toBeInTheDocument();
+      expect(errorMessage).toBeInTheDocument();
     });
 
-    it('shows an error message', async () => {});
+    it('is able to refetch property listings', async () => {
+      mockAxiosGet({
+        mockAxios: axios,
+        mockUrl,
+        failResponse: {
+          status: 500
+        }
+      });
 
-    it('does not show the list', async () => {});
+      const container = render(<Container />);
+      const { getByText, getByTestId } = container;
+      await act(() => wait());
 
-    it('is able to refetch property listings', async () => {});
+      const errorMessage = getByText("Uh oh. It looks like some things haven't loaded correctly");
+      const refetchElement = getByTestId('refetch');
+
+      expect(errorMessage).toBeInTheDocument();
+
+      mockAxiosGet({
+        mockAxios: axios,
+        mockUrl,
+        successResponse: {
+          status: 200,
+          data: propertiesFixtures
+        }
+      });
+
+      fireEvent.click(refetchElement);
+      await act(() => wait());
+
+      const listingOne = getByTestId('property-1');
+      const listingTwo = getByTestId('property-2');
+
+      expect(listingOne).toBeInTheDocument();
+      expect(listingTwo).toBeInTheDocument();
+      expect(errorMessage).not.toBeInTheDocument();
+    });
   });
 });

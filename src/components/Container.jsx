@@ -28,6 +28,8 @@ const Container = () => {
       </select>
       {isLoading && <p>Loading...</p>}
       {isSuccess && filteredData.map(property => <Listing {...property} key={property.id} />)}
+      {isError && <div>Uh oh. It looks like some things haven't loaded correctly</div>}
+      {isError && <div data-testid="refetch" onClick={fetch}></div>}
     </Fragment>
   );
 };

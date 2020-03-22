@@ -2,7 +2,7 @@
   display: grid;
   background-color: rgba(68, 81, 95);
   grid-template-columns: repeat(4, minmax(10rem, 1fr));
-  grid-template-rows: repeat(auto-fill, auto-fit);
+  grid-template-rows: repeat(auto-fill, 30rem);
   grid-gap: 10rem;
   justify-content: center;
   justify-items: center;

@@ -3,8 +3,7 @@ import filterStyles from 'styles/filter.css';
 
 const Filter = ({ filterBy, data }) => {
   const filter = ({ target: { value } }) => {
-    // TODO: ugly. to refactor
-    const criteria = !!value ? { status: value } : null;
+    const criteria = value === 'all' ? null : { status: value };
 
     filterBy({ data, criteria });
   };
@@ -15,8 +14,7 @@ const Filter = ({ filterBy, data }) => {
         Filter Status :
       </label>
       <select defaultValue="" id="filter" data-testid="filter" onChange={filter}>
-        <option>Select a status</option>
-        <option value="">All</option>
+        <option value="all">All</option>
         <option value="sold">Sold</option>
         <option value="current">Current</option>
         <option value="off_market">Off Market</option>

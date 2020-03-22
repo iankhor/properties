@@ -24,7 +24,7 @@ const Container = () => {
     <div role="main" className={containerStyles.container}>
       {isLoading && <Loader />}
       {isError && <Error fetch={fetch} />}
-      {!isLoading && <Filter filterBy={filterBy} data={data} />}
+      {!isLoading && isSuccess && <Filter filterBy={filterBy} data={data} />}
       {isSuccess && (
         <Layout>
           <Listings listings={filteredListings} />

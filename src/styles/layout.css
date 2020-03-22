@@ -15,12 +15,14 @@
 @media (max-width: 1000px) {
   .layout {
     grid-template-columns: repeat(2, 25rem);
-    grid-gap: 15rem;
+    padding-top: 15rem;
   }
 }
 
 @media (max-width: 740px) {
   .layout {
     grid-template-columns: repeat(1, 25rem);
+    grid-gap: 5rem;
+    padding-top: 15rem;
   }
 }

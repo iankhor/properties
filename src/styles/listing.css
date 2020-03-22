@@ -53,7 +53,7 @@ img {
 
 @media (max-width: 1000px) {
   .listing {
-    grid-template-columns: 12em 12rem;
+    grid-template-columns: 10em 10rem;
   }
 }
 

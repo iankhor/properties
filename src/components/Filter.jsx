@@ -10,9 +10,11 @@ const Filter = ({ filterBy, data }) => {
   };
   return (
     <div className={filterStyles.filter}>
-      <div className={filterStyles.title}>AP Property Listings</div>
-      <label className={filterStyles.label}>Status :</label>
-      <select defaultValue="" data-testid="filter" onChange={filter}>
+      <h1 className={filterStyles.title}>AP Property Listings</h1>
+      <label htmlFor="filter" className={filterStyles.label}>
+        Filter Status :
+      </label>
+      <select defaultValue="" id="filter" data-testid="filter" onChange={filter}>
         <option>Select a status</option>
         <option value="">All</option>
         <option value="sold">Sold</option>

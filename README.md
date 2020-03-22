@@ -1,6 +1,6 @@
 # ;TLDR
 
-Deployed app is at [TBA](TBA)
+Deployed app is at [https://ap-properties.herokuapp.com/](https://ap-properties.herokuapp.com/)
 
 ## Instructions
 

@@ -9,6 +9,7 @@
   box-sizing: border-box;
   padding: 3rem;
   width: 100%;
+  padding-top: 11rem;
 }
 
 @media (max-width: 1000px) {

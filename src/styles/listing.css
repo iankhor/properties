@@ -2,16 +2,17 @@
   background-color: white;
   border: 0.1rem solid white;
   display: grid;
-  grid-template-columns: 15em 15rem;
+  grid-template-columns: 13em 13rem;
   justify-items: center;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
 }
 
 img {
-  object-fit: scale-down;
-  height: 20rem;
+  object-fit: cover;
+  width: 270px;
+  height: 200px;
 }
 
 .status {
@@ -50,7 +51,13 @@ img {
   padding: 0.7rem;
 }
 
-@media (max-width: 37.5rem) {
+@media (max-width: 1000px) {
+  .listing {
+    grid-template-columns: 12em 12rem;
+  }
+}
+
+@media (max-width: 740px) {
   .listing {
     font-size: 2rem;
     grid-template-columns: 15rem 15rem;

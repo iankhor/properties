@@ -1,20 +1,25 @@
 .layout {
   display: grid;
   background-color: rgba(68, 81, 95);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, minmax(10rem, 1fr));
   grid-template-rows: repeat(auto-fill, auto-fit);
-  grid-gap: 2rem;
-  justify-items: stretch;
-  justify-content: space-between;
-  width: 100%;
+  grid-gap: 10rem;
+  justify-content: center;
+  justify-items: center;
   box-sizing: border-box;
   padding: 3rem;
+  width: 100%;
 }
 
-@media (max-width: 37.5rem) {
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: repeat(2, 25rem);
+    grid-gap: 15rem;
+  }
+}
+
+@media (max-width: 740px) {
   .layout {
     grid-template-columns: repeat(1, 25rem);
-    justify-content: center;
-    justify-items: center;
   }
 }

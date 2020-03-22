@@ -8,20 +8,21 @@
 .title {
   display: inline-block;
   color: white;
-  padding-left: 2rem;
+  padding-left: 10rem;
   font-size: 1.8rem;
   vertical-align: middle;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .label {
   margin: auto;
-  padding-left: 45%;
+  padding-left: 60%;
   padding-right: 1rem;
   color: white;
   display: inline-block;
   vertical-align: middle;
+  font-size: 2rem;
 }
 
 select {
@@ -32,9 +33,10 @@ select {
   border: 1px solid white;
   display: inline-block;
   vertical-align: middle;
+  font-size: 1.5rem;
 }
 
-@media (max-width: 37.5rem) {
+@media (max-width: 1000px) {
   .filter {
     text-align: center;
   }
@@ -47,10 +49,20 @@ select {
 
   .label {
     padding: 1rem;
-    font-size: 2rem;
+  }
+}
+
+@media (max-width: 740px) {
+  .filter {
+    text-align: center;
   }
 
-  select {
-    font-size: 1.5rem;
+  .title {
+    padding: 0;
+    display: block;
+  }
+
+  .label {
+    padding: 1rem;
   }
 }

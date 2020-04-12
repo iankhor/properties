@@ -30,6 +30,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           'style-loader',
+          { loader: 'css-modules-typescript-loader' },
           {
             loader: 'css-loader',
             options: {

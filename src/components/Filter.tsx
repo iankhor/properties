@@ -1,5 +1,5 @@
 import React from 'react';
-import filterStyles from 'styles/filter.css';
+import filterStyles from '../styles/filter.css';
 
 const Filter = ({ filterBy, data }) => {
   const filter = ({ target: { value } }) => {

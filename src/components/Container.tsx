@@ -15,7 +15,7 @@ const Container = () => {
   const [{ isLoading, isSuccess, isError, data }, fetch] = useFetchProperties();
   const { data: filteredListings, filterBy } = useDataFilter();
 
-  const showInitialListings = () => isSuccess && filterBy({ data });
+  const showInitialListings = () => isSuccess && filterBy({ data, criteria: null });
 
   useEffect(() => void fetch(), []);
   useEffect(() => void showInitialListings(), [data, isSuccess]);

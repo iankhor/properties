@@ -9,7 +9,7 @@ import axios from 'axios';
 
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({ data: {} })),
-  post: jest.fn(() => Promise.resolve({ data: {} }))
+  post: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 
 describe('Container', () => {
@@ -31,8 +31,8 @@ describe('Container', () => {
         mockUrl,
         successResponse: {
           status: 200,
-          data: propertiesFixtures
-        }
+          data: propertiesFixtures,
+        },
       });
     });
 
@@ -87,8 +87,8 @@ describe('Container', () => {
         mockAxios: axios,
         mockUrl,
         failResponse: {
-          status: 500
-        }
+          status: 500,
+        },
       });
       const { queryByTestId, getByText } = render(<Container />);
       await act(() => wait());
@@ -107,8 +107,8 @@ describe('Container', () => {
         mockAxios: axios,
         mockUrl,
         failResponse: {
-          status: 500
-        }
+          status: 500,
+        },
       });
 
       const container = render(<Container />);
@@ -125,8 +125,8 @@ describe('Container', () => {
         mockUrl,
         successResponse: {
           status: 200,
-          data: propertiesFixtures
-        }
+          data: propertiesFixtures,
+        },
       });
 
       fireEvent.click(refetchElement);

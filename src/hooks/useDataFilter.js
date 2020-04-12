@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isFound } from 'lib/utils';
+import { isFound } from 'lib/utils.ts';
 
 const useDataFilter = () => {
   const [data, setData] = useState([]);
@@ -9,8 +9,8 @@ const useDataFilter = () => {
       return setData(data);
     }
 
-    const [key, value] = Object.entries(criteria).flatMap(data => data);
-    const filteredData = data.filter(data => isFound(data, key, value));
+    const [key, value] = Object.entries(criteria).flatMap((data) => data);
+    const filteredData = data.filter((data) => isFound(data, key, value));
 
     setData(filteredData);
   };

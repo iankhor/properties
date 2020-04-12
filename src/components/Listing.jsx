@@ -2,13 +2,13 @@ import React from 'react';
 import numeral from 'numeraljs';
 import listingStyles from 'styles/listing.css';
 
-import { snakeCaseToTitleCase } from 'lib/utils';
+import { snakeCaseToTitleCase } from 'lib/utils.ts';
 
 const statusColours = {
   current: 'green',
   sold: 'red',
   off_market: 'orange',
-  withdrawn: 'grey'
+  withdrawn: 'grey',
 };
 
 const Listing = ({ id, status, street, suburb, state, postcode, price, image }) => (

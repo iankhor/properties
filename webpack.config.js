@@ -9,14 +9,14 @@ module.exports = {
   entry: path.resolve(__dirname, 'src/index'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         include: path.resolve(__dirname, 'src'),
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/i,
@@ -26,34 +26,34 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true
-            }
-          }
-        ]
-      }
-    ]
+              modules: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),
-    port: 9000
+    port: 9000,
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.css'],
+    extensions: ['*', '.js', '.jsx', '.css', '.ts', '.tsx'],
     alias: {
       components: `${src}/components`,
       hooks: `${src}/hooks`,
       lib: `${src}/lib`,
       testlib: `${src}/testlib`,
-      styles: `${src}/styles`
-    }
+      styles: `${src}/styles`,
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html' //source html
+      template: 'src/index.html', //source html
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-      'process.env.REACT_APP_PROPERTIES_ENDPOINT': JSON.stringify(process.env.REACT_APP_PROPERTIES_ENDPOINT)
-    })
-  ]
+      'process.env.REACT_APP_PROPERTIES_ENDPOINT': JSON.stringify(process.env.REACT_APP_PROPERTIES_ENDPOINT),
+    }),
+  ],
 };

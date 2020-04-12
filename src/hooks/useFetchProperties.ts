@@ -27,14 +27,14 @@ const useFetchProperties = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const fetch = async () => {
-    dispatch({ type: RESET });
-    dispatch({ type: LOADING });
+    dispatch({ type: RESET, data: null });
+    dispatch({ type: LOADING, data: null });
 
     try {
       const { status, data } = await axios.get(`${process.env.REACT_APP_PROPERTIES_ENDPOINT}`);
       status >= 200 && status < 300 && dispatch({ type: SUCCESS, data });
     } catch (e) {
-      dispatch({ type: FAIL });
+      dispatch({ type: FAIL, data: null });
     }
   };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import numeral from 'numeraljs';
-import listingStyles from '../styles/listing.css';
+import listingStyles from 'styles/listing.css';
 
-import { snakeCaseToTitleCase } from '../lib/utils';
+import { snakeCaseToTitleCase } from 'lib/utils';
 
 const statusColours = {
   current: 'green',

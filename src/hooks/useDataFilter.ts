@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isFound } from '../lib/utils';
+import { isFound } from 'lib/utils';
 
 type FilterData = {
   data: any;

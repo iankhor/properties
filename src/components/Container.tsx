@@ -6,10 +6,10 @@ import Loader from './Loader';
 import Error from './Error';
 import Layout from './Layout';
 
-import useFetchProperties from '../hooks/useFetchProperties';
-import useDataFilter from '../hooks/useDataFilter';
+import useFetchProperties from 'hooks/useFetchProperties';
+import useDataFilter from 'hooks/useDataFilter';
 
-import containerStyles from '../styles/container.css';
+import containerStyles from 'styles/container.css';
 
 const Container = () => {
   const [{ isLoading, isSuccess, isError, data }, fetch] = useFetchProperties();

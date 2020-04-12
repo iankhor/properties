@@ -1,6 +1,6 @@
 import React from 'react';
 
-import errorStyles from '../styles/error.css';
+import errorStyles from 'styles/error.css';
 
 const Error = ({ fetch }) => (
   <div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isFound } from 'lib/utils.ts';
+import { isFound } from 'lib/utils';
 
 const useDataFilter = () => {
   const [data, setData] = useState([]);

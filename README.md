@@ -21,6 +21,7 @@ Notable Tech/Tools used:
 5. [React Axe - for accessibility testing](https://github.com/dequelabs/react-axe)
 6. [CSS Modules](https://github.com/css-modules/css-modules)
 7. [CSS Grid - for responsive webpages](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+8. [Typescript](https://www.typescriptlang.org/)
 
 ## Instructions
 

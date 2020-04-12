@@ -1,9 +1,25 @@
 import React from 'react';
 import filterStyles from 'styles/filter.css';
 
-const Filter = ({ filterBy, data }) => {
+import { Data } from 'hooks/useDataFilter';
+
+type Criteria = {
+  status: string;
+};
+
+type FilterData = {
+  data: Data[];
+  criteria?: string | Criteria | null; //TODO: refactor
+};
+
+type FilterProps = {
+  data: Data[];
+  filterBy: (args: FilterData) => void;
+};
+
+const Filter = ({ filterBy, data }: FilterProps): JSX.Element => {
   const filter = ({ target: { value } }) => {
-    const criteria = value === 'all' ? null : { status: value };
+    const criteria = value === 'all' ? null : { status: value }; //TODO: refactor
 
     filterBy({ data, criteria });
   };

@@ -1,19 +1,35 @@
 import React, { useState } from 'react';
 import { isFound } from 'lib/utils';
 
+export type Data = {
+  id: number;
+  status: string;
+  street: string;
+  suburb: string;
+  state: string;
+  postcode: string;
+  price: number;
+  image: string;
+};
+
+type Criteria = {
+  status: string;
+};
+
 type FilterData = {
-  data: any;
-  criteria?: any;
+  data: Data[];
+  criteria?: Criteria | any; //TODO: refactor;
 };
 
 type DataFilterHook = {
-  data: any;
+  data: Data[];
   filterBy: (filter: FilterData) => void;
 };
 
 const useDataFilter = (): DataFilterHook => {
   const [data, setData] = useState([]);
 
+  //TODO: refactor;
   const filterBy = ({ data, criteria = {} }): void => {
     if (!criteria) {
       return setData(data);

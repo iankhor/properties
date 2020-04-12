@@ -2,7 +2,11 @@ import React from 'react';
 
 import errorStyles from 'styles/error.css';
 
-const Error = ({ fetch }) => (
+type ErrorProps = {
+  fetch: () => void;
+};
+
+const Error = ({ fetch }: ErrorProps): JSX.Element => (
   <div>
     <div className={errorStyles.error}>
       &#128553; Uh oh. It looks like some things haven't loaded correctly

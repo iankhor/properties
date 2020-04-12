@@ -11,7 +11,18 @@ const statusColours = {
   withdrawn: 'grey',
 };
 
-const Listing = ({ id, status, street, suburb, state, postcode, price, image }) => (
+type ListingProps = {
+  id: string;
+  status: string;
+  suburb: string;
+  state: string;
+  street: string;
+  postcode: string;
+  price: string;
+  image: string;
+};
+
+const Listing = ({ id, status, street, suburb, state, postcode, price, image }: ListingProps): JSX.Element => (
   <div className={listingStyles.listing} data-testid={`property-${id}`}>
     <div>{numeral(price).format('$0,0[.]00')}</div>
     <div>

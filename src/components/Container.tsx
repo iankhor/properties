@@ -11,7 +11,7 @@ import useDataFilter from 'hooks/useDataFilter';
 
 import containerStyles from 'styles/container.css';
 
-const Container = () => {
+const Container = (): JSX.Element => {
   const [{ isLoading, isSuccess, isError, data }, fetch] = useFetchProperties();
   const { data: filteredListings, filterBy } = useDataFilter();
 

@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { isFound } from '../lib/utils';
 
-type DataFilterHook = {
+type FilterData = {
   data: any;
-  filterBy: () => {};
+  criteria?: any;
 };
 
-const useDataFilter = () => {
+type DataFilterHook = {
+  data: any;
+  filterBy: (filter: FilterData) => void;
+};
+
+const useDataFilter = (): DataFilterHook => {
   const [data, setData] = useState([]);
 
-  const filterBy = ({ data, criteria }) => {
+  const filterBy = ({ data, criteria = {} }): void => {
     if (!criteria) {
       return setData(data);
     }
@@ -20,7 +25,7 @@ const useDataFilter = () => {
     setData(filteredData);
   };
 
-  return [data, filterBy];
+  return { data, filterBy };
 };
 
 export default useDataFilter;

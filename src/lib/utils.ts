@@ -2,7 +2,8 @@ type Data = {
   [key: string]: string;
 };
 
-export const isFound = (data: Data, key: string, value: string): boolean => data.hasOwnProperty(key) && data[key] === value;
+// temporarily allow key and value to be any as part of TS migration
+export const isFound = (data: Data, key: any, value: any): boolean => data.hasOwnProperty(key) && data[key] === value;
 
 const toTitleCase = (str: string): string => {
   const s = str.toLowerCase().split(' ');

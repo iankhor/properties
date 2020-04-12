@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { isFound } from 'lib/utils';
+import { isFound } from '../lib/utils';
+
+type DataFilterHook = {
+  data: any;
+  filterBy: () => {};
+};
 
 const useDataFilter = () => {
   const [data, setData] = useState([]);

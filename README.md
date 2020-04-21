@@ -1,3 +1,5 @@
+![Build and Deploy](https://github.com/iankhor/properties/workflows/Build%20and%20Deploy/badge.svg?branch=master)
+
 # ;TLDR
 
 A app to filter down a list of properties

@@ -12,10 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run JS Tests
+      - name: Run Tests
         run: |
           yarn install
           yarn test:ci
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Deploy to heroku
         uses: akhileshns/heroku-deploy@v3.0.4

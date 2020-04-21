@@ -31,10 +31,9 @@ Notable Tech/Tools used:
 To run on a your local machine
 
 1. Clone this repo
-2. run `yarn install`
-3. run `yarn dev`
-4. On a browser, go to `localhost:9000`
+2. run `yarn start`
+3. On a browser, go to `localhost:8080`
 
 To run test
 
-1. run `yarn test`
+1. run `yarn test:dev`

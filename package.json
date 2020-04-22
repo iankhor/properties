@@ -7,12 +7,15 @@
   "author": "iankhor <iankhorbc.thecoder@gmail.com>",
   "license": "MIT",
   "private": true,
+  "config": {
+    "jest": "jest --config=jest.config.js"
+  },
   "scripts": {
     "build": "webpack --mode production",
     "start": "./node_modules/webpack/bin/webpack.js -p --progress && node ./dist/server.js",
     "dev": "webpack-dev-server --mode development",
-    "test:dev": "jest --watch --coverage --verbose",
-    "test:ci": "jest --ci --coverage"
+    "test:dev": "${npm_package_config_jest} --watch --coverage --verbose",
+    "test:ci": "${npm_package_config_jest} --ci --coverage"
   },
   "dependencies": {
     "@fvilers/disable-react-devtools": "^1.1.0",
@@ -42,22 +45,5 @@
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3",
     "webpack-dev-server": "^3.10.3"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/testlib/test-setup.ts"
-    ],
-    "transform": {
-      "^.+\\.(js|jsx|ts|tsx)?$": "ts-jest"
-    },
-    "moduleNameMapper": {
-      "^hooks/([^\\.]*)$": "<rootDir>/src/frontend/hooks/$1",
-      "^components/([^\\.]*)$": "<rootDir>/src/frontend/components/$1",
-      "^styles/([^\\.]*)$": "<rootDir>/src/frontend/styles/$1",
-      "^lib/([^\\.]*)$": "<rootDir>/src/frontend/lib/$1",
-      "^testlib/([^\\.]*)$": "<rootDir>/testlib/$1",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/testlib/fileMock.ts",
-      "\\.(css|less)$": "<rootDir>/testlib/styleMock.ts"
-    }
   }
 }

@@ -5,7 +5,16 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const src = path.resolve(__dirname, 'src');
 
-module.exports = {
+const serverConfig = {
+  target: 'node',
+  entry: path.resolve(__dirname, 'src', 'backend', 'server.ts'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'server.js',
+  },
+};
+
+const appConfig = {
   entry: path.resolve(__dirname, 'src/index.tsx'),
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -59,3 +68,5 @@ module.exports = {
     }),
   ],
 };
+
+module.exports = [appConfig, serverConfig];

@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --mode production",
-    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node ./dist/server.js",
     "dev": "webpack-dev-server --mode development",
     "test:dev": "jest --watch --coverage --verbose",
     "test:ci": "jest --ci --coverage"

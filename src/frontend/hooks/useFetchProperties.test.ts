@@ -6,7 +6,7 @@ import axios from 'axios';
 
 jest.mock('axios', () => ({
   get: jest.fn(() => Promise.resolve({ data: {} })),
-  post: jest.fn(() => Promise.resolve({ data: {} }))
+  post: jest.fn(() => Promise.resolve({ data: {} })),
 }));
 
 describe('useFetchProperties', () => {
@@ -67,8 +67,8 @@ describe('useFetchProperties', () => {
             mockUrl,
             successResponse: {
               status: 200,
-              data: [{ foo: 'bar' }]
-            }
+              data: [{ foo: 'bar' }],
+            },
           });
 
           testHook(() => {
@@ -110,7 +110,7 @@ describe('useFetchProperties', () => {
           mockAxiosGet({
             mockAxios: axios,
             mockUrl,
-            failResponse: { status: 422 }
+            failResponse: { status: 422 },
           });
 
           testHook(() => {
@@ -129,8 +129,8 @@ describe('useFetchProperties', () => {
             mockUrl,
             successResponse: {
               status: 200,
-              data: [{ foo: 'bar' }]
-            }
+              data: [{ foo: 'bar' }],
+            },
           });
 
           await act(() => fetch());
@@ -147,7 +147,7 @@ describe('useFetchProperties', () => {
           mockAxiosGet({
             mockAxios: axios,
             mockUrl,
-            failResponse: { status: 422 }
+            failResponse: { status: 422 },
           });
 
           testHook(() => {

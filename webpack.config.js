@@ -51,11 +51,11 @@ const appConfig = {
   resolve: {
     extensions: ['*', '.js', '.jsx', '.css', '.ts', '.tsx'],
     alias: {
-      components: `${src}/components`,
-      hooks: `${src}/hooks`,
-      lib: `${src}/lib`,
+      components: `${src}/frontend/components`,
+      hooks: `${src}/frontend/hooks`,
+      styles: `${src}/frontend/styles`,
+      lib: `${src}/frontend/lib`,
       testlib: `${src}/testlib`,
-      styles: `${src}/styles`,
     },
   },
   plugins: [

@@ -12,10 +12,10 @@
     "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
     "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
     "paths": {
-      "styles/*": ["src/styles/*"],
-      "components/*": ["src/components/*"],
-      "lib/*": ["src/lib/*"],
-      "hooks/*": ["src/hooks/*"]
+      "styles/*": ["src/frontend/styles/*"],
+      "components/*": ["src/frontend/components/*"],
+      "lib/*": ["src/frontend/lib/*"],
+      "hooks/*": ["src/frontend/hooks/*"]
     },
     "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */

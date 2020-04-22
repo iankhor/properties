@@ -1,5 +1,6 @@
 ![Build and Deploy](https://github.com/iankhor/properties/workflows/Build%20and%20Deploy/badge.svg?branch=master)
 ![Coverage](https://codecov.io/github/iankhor/properties/branch/master/graph/badge.svg)
+![Status](https://img.shields.io/uptimerobot/ratio/7/m784801232-d52deb54adbd5846675c17e7)
 
 # ;TLDR
 

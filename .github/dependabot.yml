@@ -1,0 +1,47 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "19:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.19
+    - 14.14.22
+    - 14.14.31
+  - dependency-name: "@testing-library/react"
+    versions:
+    - 11.2.2
+    - 11.2.3
+    - 11.2.5
+  - dependency-name: "@types/react"
+    versions:
+    - 17.0.0
+    - 17.0.2
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.0
+    - 17.0.1
+  - dependency-name: html-webpack-plugin
+    versions:
+    - 4.5.0
+    - 4.5.1
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.19
+    - 26.0.20
+  - dependency-name: webpack
+    versions:
+    - 4.44.2
+  - dependency-name: typescript
+    versions:
+    - 3.9.7
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
